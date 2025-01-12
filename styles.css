@@ -23,6 +23,8 @@
     padding: 0;    
     box-sizing: border-box;
     overflow-x: hidden;
+    
+   
 }
 
 html {
@@ -58,7 +60,15 @@ body {
 }
 .first-page * {
     height: auto;
-}.left {
+}
+.cursor{
+    height:20px;
+    width:20px;
+    background-color:#FACD73;
+    border-radius:50%;
+    position:fixed;
+}
+.left {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -80,9 +90,19 @@ body {
     margin-top: 4rem;
     line-height: 1.2;
     word-wrap: break-word;
-    min-height: 3rem;
+    height:100px;
     text-align: center;
     width: 100%;
+    animation: 
+        typing 2s steps(18),
+        cursor .4s step-end infinite alternate;
+    display: inline-block;
+}
+@keyframes cursor{
+    50% { border-color:transparent }
+}
+@keyframes typing{
+    from { width:0}
 }
 .left p {
     width: 90%;
@@ -95,7 +115,12 @@ body {
     overflow: hidden;
     min-height: 3rem;
     font-family: arcane;
+    position: relative;
+    margin:0;
+    z-index: 1;
+    overflow: hidden;
 }
+
 .left button {
     height: 3rem;
     width: 8rem;
@@ -150,7 +175,7 @@ body {
     height:110vh;
     display:flex;
     background-color: rgb(0, 0, 0);
-    
+    background-blend-mode: darken;
 }
 .left-2{
     width:50%;
@@ -232,204 +257,10 @@ body {
 
 }
 
-@media screen and (max-width: 1024px) {
-    html {
-        font-size: 15px;
-    }
-
-    .first-page {
-        padding: 2rem;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .left, .right {
-        width: 100%;
-    }
-
-    .left h1 {
-        font-size: 4rem;
-        margin-top: 3rem;
-        overflow-y: hidden;
-        width: 90%;
-    }
-
-    .left p {
-        font-size: 1.4rem;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .right img {
-        max-width: 50%;
-        height: auto;
-    }
-    .right-2 img{
-        max-width: 80%;
-        height:auto;
-
-    }
-    .left button{
-        margin-top:-810px;
-        margin-left:250px;
-    }
-    
-}
-
-@media screen and (max-width: 768px) {
-    html {
-        font-size: 14px;
-    }
-
-    .first-page {
-        padding: 1.5rem;
-        flex-direction: column;
-    }
-
-    .left h1 {
-        font-size: 3.5rem;
-        overflow-y: hidden;
-        margin-top: 3rem;
-        width: 90%;
-    }
-
-    .left p {
-        font-size: 1.2rem;
-        line-height: 1.6rem;
-        min-height: 3rem;
-    }
-
-    .left button {
-        height: 2.5rem;
-        width: 7rem;
-        font-size: 1rem;
-    }
-
-    .right img {
-        max-width: 50%;
-        height: auto;
-    }
-    .right-2 img{
-        max-width: 60%;
-        height:auto;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    html {
-        font-size: 13px;
-    }
-
-    .first-page {
-        padding: 1rem;
-        gap: 1.5rem;
-    }
-
-    .left h1 {
-        font-size: 2.5rem;
-        overflow-y: hidden;
-        text-align: center;
-        margin-top: 2rem;
-        min-height: 2rem;
-        width: 90%;
-    }
-
-    .left p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        height: auto;
-        overflow: hidden;
-        min-height: 3rem;
-    }
-
-    .left button {
-        height: 2rem;
-        width: 6rem;
-        font-size: 0.9rem;
-    }
-
-    .right img {
-        max-width: 80%;
-        height: auto;
-    }
-    .section-2{
-        display:flex;
-        flex-direction: column;
-    }
-    .left-2 {
-        text-align: start;
-        width:100%;
-        height:82%;
-
-    }
-    .right-2{
-        width:100%;
-        height:80%;
-        
-    }
-    .right-2 img{
-        max-width:80%;
-        height:90%;
-        margin-left:100px
-        
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .first-page {
-        padding: 0.5rem;
-        gap: 1rem;
-    }
-
-    .left h1 {
-        overflow-y: hidden;
-        font-size: 2rem;
-    }
-
-    .left p {
-        font-size: 0.9rem;
-        line-height: 1.4rem;
-    }
-
-    .left button {
-        height: 1.8rem;
-        width: 5rem;
-        font-size: 0.8rem;
-    }
-
-    .right img {
-        max-width: 70%;
-    }
-    .section-2{
-        display:flex;
-        flex-direction: column;
-    }
-    .left-2 {
-        text-align: start;
-        width:100%;
-        height:50%;
-
-    }
-    .right-2{
-        width:100%;
-        height:30%;
-        
-    }
-    .right-2 img{
-        max-width:80%;
-        height:100%;
-        border:10px solid white;
-        border-radius:15px;
-        object-fit:cover;
-        margin-left:80px;
-        
-    }
-}
-
 /*section-3*/
 .section-3{
     height: 100%;
+    margin-bottom:200px;
 }
 .contact-container{
     width:100%;
@@ -503,110 +334,253 @@ body {
   }
   
 
-  @media screen and (max-width: 1024px) {
-    
-    .first-page {
-        padding: 2rem;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+  
+/*RESPONSIVENESS*/
+@media screen and (max-width:1280px) {
+    .first-page{
+        width:100%;
+        height:80vh;
+        padding-top:400px;
     }
-
-    .left, .right {
-        width: 100%;
+    .left{
+        min-width:50%;
+        max-height:auto;
     }
-
-    .left h1 {
-        font-size: 4rem;
-        margin-top: 3rem;
-        overflow-y: hidden;
-        width: 90%;
+    .left h1{
+        font-size:80px;
     }
-
-    .left p {
-        font-size: 1.4rem;
-        width: 90%;
-        margin: 0 auto;
+    .left p{
+        font-size:20px;
     }
+    .right{
+        min-width:50%;
+        max-height:auto;
+        margin-top:60px;
+    }
+    .right img{
+        min-width:80%;
+        max-height:auto; 
+    }
+    .section-2{
+        width:100%;
+        height:80vh;
+    }
+    .left-2{
+        min-width:40%;
+        max-height:auto;
 
-    .right img {
-        max-width: 50%;
-        height: auto;
+    }
+    .right-2{
+        min-width:50%;
+        max-height:auto;
+        margin-right:60px;
     }
     .right-2 img{
-        max-width: 80%;
-        height:auto;
-
+        width:90%;
+        max-height:80%;
+        margin-left:30px;
+    
     }
+    
 }
-
-@media screen and (max-width: 768px) {
-   
-
-    .first-page {
-        padding: 1.5rem;
-        flex-direction: column;
+@media screen and (max-width: 1024px) {
+    .first-page{
+        width:100%;
+        height:80vh;
+        padding-top:400px;
     }
-
-    .left h1 {
-        font-size: 3.5rem;
-        overflow-y: hidden;
-        margin-top: 3rem;
-        width: 90%;
+    .left{
+        min-width: 50%;
+        max-height:auto;
+        
     }
-
-    .left p {
-        font-size: 1.2rem;
-        line-height: 1.6rem;
-        min-height: 3rem;
+    .left h1{
+        font-size: 80px;
     }
-
-    .left button {
-        height: 2.5rem;
-        width: 7rem;
-        font-size: 1rem;
+    .left p{
+        font-size: 20px;
     }
+    .right{
+        min-width:50%;
+        max-height:auto;
+        margin-top:60px;
+    }
+    .right img{
+        min-width:80%;
+        max-height:auto;
+        
+    }
+    .section-2{
+        width:100%;
+        height:80vh;
+    }
+    .left-2{
+        min-width:50%;
+        max-height:auto;
 
-    .right img {
-        max-width: 50%;
-        height: auto;
+
+    }
+    .right-2{
+        min-width:50%;
+        max-height:auto;
+
+        margin-right:60px;
     }
     .right-2 img{
-        max-width: 60%;
-        height:auto;
-    }
-}
-
-@media screen and (max-width: 480px) {
+        width:90%;
+        height:50%;
+        margin-left:10px;
     
-    .contact-heading{
-        max-width:80%;
     }
-    .contact-heading h3{
-        font-size:18px;
+    
+
+}
+@media screen and (max-width:768px) {
+    .first-page{
+        width:100%;
+        height:60vh;
+        padding-top:100px;
+    
+    }
+    .left{
+        min-width: 90%;
+        height:auto;
+        margin-top:150px;
+    }
+    .left h1{
+        font-size: 60px;
+        padding:20px;
+    }
+    .left p{
+        font-size: 20px;
+        margin-top:-50px;
+       
+    }
+    .right{
+        min-width:50%;
+        max-height:auto;
+        margin-top:60px;
+        visibility: collapse;
+    }
+    .right img{
+        min-width:80%;
+        max-height:auto;
+        visibility: hidden;
+    }
+    .section-2{
+        width:100%;
+        height:auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .left-2{
+        min-width:90%;
+        max-height:auto;
+        margin-left:30px;
+    }
+    .right-2{
+        min-width:70%;
+        max-height:auto;
+        margin-left:80px;
+    }
+    .right-2 img{
+        width:90%;
+        max-height:80%;
+        margin-left:40px;
+    
+    }
+    .section-3{
+        width:100%;
+        height:auto;
     }
     .contact-heading h2{
-        margin-left:230px;
+        width:200px;
+        margin-top:-15px;
+        margin-left:250px;
+    }
+    .contact-heading h3{
+        font-size:20px;
     }
     .details-heading p{
         font-size:40px;
     }
 }
-
-@media screen and (max-width: 375px) {
-   
-    .contact-heading{
+@media screen and (max-width:480px){
+    .left h1{
+        font-size:43px;
+        
+    }
+    .left p{
+        font-size:20px;
+    }
+    .left-2{
+        margin-left:10px;
+    }
+    .right-2{
+        margin-left:40px;
+        padding-right:30px;
+    }
+    .right-2 img{
+        margin-right:10px;
+    }
+    .contact-container{
         max-width:80%;
     }
     .contact-heading h3{
-        font-size:18px;
+        font-size:15px;
+        margin-top:10px;
     }
     .contact-heading h2{
-        margin-left:230px;
+        margin-left:200px;
+    }
+    .details-heading p{
+        max-width:80%;
+        font-size:30px;
+    }
+}
+@media screen and (max-width:385px){
+    .left h1{
+        font-size:40px;   
+    }
+    .left p{
+        font-size: 15px;
+    }
+    .section-2{
+        width:100%;
+        height:auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .left-2{
+        min-width:80%;
+        max-height:auto;
+        margin-left:20px;
+    }
+    .right-2{
+        min-width:70%;
+        max-height:auto;
+        margin-left:80px;
+    }
+    .right-2 img{
+        width:90%;
+        max-height:80%;
+        margin-left:0px;
+    
+    }
+    .contact-container{
+        max-width:80%;
+    }
+    .contact-heading h3{
+        font-size:12px;
+    }
+    .contact-heading h2{
+        margin-top:-10px;
+        margin-left:180px;
     }
     .details-heading p{
         font-size:30px;
     }
+    .details{
+        margin-top:-40px;
+    }
 }
-  
-  
