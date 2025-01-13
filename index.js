@@ -35,6 +35,8 @@ gsap.from(".right-2 img",{
     delay:2,
     duration:3,
     y:-600,
+    duration:2.5,
+    ease: "bounce.out",
     scrollTrigger:{
         trigger:".right-2 img",
         scroller:"body",
